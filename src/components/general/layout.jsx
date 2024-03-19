@@ -30,21 +30,16 @@ export default function Layout() {
     if (isMobileScreen) setClose(!close);
   };
 
-  const handleClickOutside = (e) => {
-    if (
-      isMobileScreen &&
-      navRef.current &&
-      !navRef.current.contains(e.target) &&
-      close
-    ) {
-      setClose(false);
-      console.log("clicked outside");
-    }
-  };
-
   useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
+    const handleClickOutside = (e) => {
+      if (!navRef.current?.contains(e.target)) {
+        setClose(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   useEffect(() => {
