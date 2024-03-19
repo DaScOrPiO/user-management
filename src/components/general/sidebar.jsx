@@ -24,7 +24,7 @@ export default function Sidebar() {
           <span className="mx-2">
             <AvatarIcon color="white" width={25} height={25} />
           </span>
-          <Link to="/login">Login</Link>
+          <Link to="/auth">Login</Link>
         </li>
         <li className="list-none my-3 px-4 py-2 flex items-center text-white text-2xl">
           <span className="mx-2">

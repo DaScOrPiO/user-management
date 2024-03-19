@@ -9,7 +9,7 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/login" element={<Index />} />
+          <Route path="/auth" element={<Index />} />
           <Route path="/" element={<Layout />}>
             <Route index element={<All_users />} />
             <Route path="*" element={<No_page />} />
