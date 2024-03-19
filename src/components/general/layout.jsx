@@ -32,8 +32,10 @@ export default function Layout() {
 
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (!navRef.current?.contains(e.target)) {
-        setClose(false);
+      if (isMobileScreen) {
+        if (!navRef.current?.contains(e.target)) {
+          setClose(false);
+        }
       }
     };
 
