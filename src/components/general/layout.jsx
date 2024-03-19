@@ -22,7 +22,7 @@ export default function Layout() {
   }, []);
 
   useEffect(() => {
-    if (width <= 768) return setIsMobileScreen(true);
+    if (width <= 767) return setIsMobileScreen(true);
     return setIsMobileScreen(false);
   }, [width]);
 
@@ -59,9 +59,9 @@ export default function Layout() {
         onClick={handleClick}
       >
         {close ? (
-          <Cross1Icon color="black" width={50} height={50} />
+          <Cross1Icon color="#334155" width={50} height={50} />
         ) : (
-          <DragHandleHorizontalIcon color="black" width={50} height={50} />
+          <DragHandleHorizontalIcon color="#334155" width={50} height={50} />
         )}
       </span>
       {close && (
