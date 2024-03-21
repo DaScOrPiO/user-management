@@ -97,7 +97,6 @@ export default function Signup() {
         password: formData.password,
       };
       const response = await makeRequest(signup, values);
-      console.log(response);
       if (response.status === 200) {
         notify("Registeration successful");
       } else {
@@ -118,7 +117,7 @@ export default function Signup() {
       <h1 className="text-slate-700 font-bold text-center text-2xl">
         Login using your orgainsation&apos;s account
       </h1>
-      <form action="#" className="" onSubmit={handleSubmit}>
+      <form className="" onSubmit={handleSubmit}>
         <div className="w-full">
           <div className="mt-6 w-full flex items-center">
             <div className="w-2/4">
