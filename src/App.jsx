@@ -5,18 +5,20 @@ import No_page from "./components/no_page";
 import Layout from "./components/general/layout";
 
 function App() {
+  const cookie = localStorage.getItem("active");
   return (
-    <>
-      <Router>
-        <Routes>
+    <Router>
+      <Routes>
+        {!cookie ? (
           <Route path="/auth" element={<Index />} />
+        ) : (
           <Route path="/" element={<Layout />}>
             <Route index element={<All_users />} />
-            <Route path="*" element={<No_page />} />
           </Route>
-        </Routes>
-      </Router>
-    </>
+        )}
+        <Route path="*" element={<No_page />} />
+      </Routes>
+    </Router>
   );
 }
 

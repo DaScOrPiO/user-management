@@ -49,7 +49,13 @@ export default function Login() {
       const response = await makeRequest(login, formData);
       if (response.status === 200) {
         notify("Login successful");
-        navigate("/");
+        let loggedInStatus = localStorage.getItem("active");
+        if (loggedInStatus) {
+          navigate("/");
+        } else {
+          loggedInStatus = localStorage.setItem("active", "true");
+          navigate("/");
+        }
       } else {
         notify(response.data);
       }
