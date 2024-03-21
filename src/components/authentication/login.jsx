@@ -2,7 +2,6 @@ import { toast } from "react-toastify";
 import { login, makeRequest } from "../endpoints/endpoint";
 import { EyeOpenIcon, EyeNoneIcon } from "@radix-ui/react-icons";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -11,8 +10,6 @@ export default function Login() {
   });
 
   const [showPassword, setShowPassword] = useState(false);
-
-  const navigate = useNavigate();
 
   const togglePasswordIcon = () => {
     setShowPassword(!showPassword);
@@ -51,10 +48,10 @@ export default function Login() {
         notify("Login successful");
         let loggedInStatus = localStorage.getItem("active");
         if (loggedInStatus) {
-          navigate("/");
+          window.location.reload();
         } else {
           loggedInStatus = localStorage.setItem("active", "true");
-          navigate("/");
+          window.location.reload();
         }
       } else {
         notify(response.data);

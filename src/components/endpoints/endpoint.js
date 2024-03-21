@@ -24,3 +24,12 @@ export const makeRequest = async (url, data) => {
     console.log("something went wrong", err);
   }
 };
+
+export const makeGetRequest = async (url) => {
+  try {
+    const req = await axios.get(baseUrl + url, { withCredentials: true });
+    return req;
+  } catch (err) {
+    console.log("something went wrong", err);
+  }
+};

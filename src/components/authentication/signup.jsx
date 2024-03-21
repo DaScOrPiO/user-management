@@ -2,7 +2,6 @@ import { useState } from "react";
 import { signup, makeRequest } from "../endpoints/endpoint";
 import { toast } from "react-toastify";
 import { EyeOpenIcon, EyeNoneIcon } from "@radix-ui/react-icons";
-import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -13,8 +12,6 @@ export default function Signup() {
     password: "",
     confirmPassword: "",
   });
-
-  const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -104,7 +101,7 @@ export default function Signup() {
         notify("Registeration successful");
         const loggedInStatus = localStorage.setItem("active", "true");
         if (loggedInStatus) {
-          navigate("/");
+          window.location.reload()
         }
       } else {
         notify(response.data);

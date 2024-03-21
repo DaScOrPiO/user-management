@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Routes>
         {!cookie ? (
-          <Route path="/auth" element={<Index />} />
+          <Route path="/" element={<Index />} />
         ) : (
           <Route path="/" element={<Layout />}>
             <Route index element={<All_users />} />

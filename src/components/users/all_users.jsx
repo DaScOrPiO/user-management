@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import users from "../dummy_data";
 import { PlusIcon } from "@radix-ui/react-icons";
+import { makeGetRequest, get } from "../endpoints/endpoint";
+import { toast } from "react-toastify";
 
 export default function All_users() {
   const [selectedUsers, setSelectedUsers] = useState([]);
@@ -23,9 +25,33 @@ export default function All_users() {
     );
   };
 
+  const notify = (message) => {
+    toast(message);
+  };
+
   const showForm = () => {
     setDisplayForm(true);
   };
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await makeGetRequest(get);
+        if (response.status === 200) {
+          console.log(response);
+        }
+      } catch (err) {
+        console.log("something went wrong!", err);
+        if (err.response && err.response.data) {
+          toast.error(err.response.data);
+        } else {
+          toast.error("something went wrong!");
+        }
+      }
+    };
+
+    fetchUsers();
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
