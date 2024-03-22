@@ -9,6 +9,6 @@ With this product, organisations don't need to worry about keeping record or the
 * After that run `npm run dev` command to setup the server
   
   ### Backend Integration
-* Fork the database repo `` link to repo can be found here:
+* Fork the database repo `https://github.com/DaScOrPiO/user-management-db.git` link to repo can be found here: `https://github.com/DaScOrPiO/user-management-db`
 * Go to the root folder and run `npm install` to install all project dependencies
 * run `node` or `nodemon` index.js to start the server
