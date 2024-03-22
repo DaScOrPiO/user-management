@@ -1,8 +1,10 @@
 # user-management
+User management is an application that allows organisations manage it's customer's details efficiently.
+With this product, organisations don't need to worry about keeping record or the loss of it's consumer's files. We manage it all and keep it secure. 
 
 ## Dev Setup
 
-* Fork the repo using ``
+* Fork the repo using `https://github.com/DaScOrPiO/user-management.git`
 * Go to the root folder of the project and run npm install
 * After that run `npm run dev` command to setup the server
   
